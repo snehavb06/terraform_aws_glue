@@ -3,7 +3,11 @@ variable "aws_region" {
 }
 
 variable "glue_job_name" {
-  default = "ETL-2"
+  default = "glue_etl_drop_duplicates"
+}
+
+variable "glue_role_name" {
+  default = "AWSGlueETLRole"
 }
 
 variable "s3_source_path" {
@@ -12,8 +16,4 @@ variable "s3_source_path" {
 
 variable "s3_target_path" {
   default = "s3://glue-tutor-bucket-practice1/landing_zone/result/"
-}
-
-variable "glue_role_name" {
-  default = "glue_role"
 }
