@@ -11,9 +11,9 @@ variable "glue_role_name" {
 }
 
 variable "s3_source_path" {
-  default = "s3://glue-tutor-bucket-practice1/landing_zone/customer/customers-100.csv"
+  default = "s3://glue-tutor-bucket-practice2/landing_zone/customer/customers-100 (1).csv"
 }
 
 variable "s3_target_path" {
-  default = "s3://glue-tutor-bucket-practice1/landing_zone/result/"
+  default = "s3://glue-tutor-bucket-practice2/landing_zone/result/"
 }
