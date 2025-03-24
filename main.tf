@@ -1,3 +1,6 @@
+provider "aws" {
+  region = var.aws_region
+}
 resource "aws_iam_role" "glue_role" {
   name = var.glue_role_name
 
