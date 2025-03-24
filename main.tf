@@ -17,10 +17,16 @@ resource "aws_iam_role" "glue_role" {
   EOF
 }
 
-resource "aws_iam_policy_attachment" "glue_policy" {
-  name       = "glue-policy-attachment"
+resource "aws_iam_policy_attachment" "glue_console_access" {
+  name       = "glue-console-access"
   roles      = [aws_iam_role.glue_role.name]
-  policy_arn = "arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess" "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess"
+}
+
+resource "aws_iam_policy_attachment" "s3_full_access" {
+  name       = "s3-full-access"
+  roles      = [aws_iam_role.glue_role.name]
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
 resource "aws_glue_job" "glue_etl" {
