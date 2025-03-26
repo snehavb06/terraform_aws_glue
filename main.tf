@@ -1,8 +1,16 @@
-variable "spacelift_api_token" {}
+terraform {
+  required_providers {
+    spacelift = {
+      source  = "spacelift-io/spacelift"
+      version = "~> 1.0"
+    }
+  }
+}
 
 provider "spacelift" {
-  api_token = var.spacelift_api_token
+  api_key = var.spacelift_api_token
 }
+
 provider "aws" {
   region = var.aws_region
 }
