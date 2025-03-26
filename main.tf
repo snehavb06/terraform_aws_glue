@@ -1,3 +1,8 @@
+variable "spacelift_api_token" {}
+
+provider "spacelift" {
+  api_token = var.spacelift_api_token
+}
 provider "aws" {
   region = var.aws_region
 }
